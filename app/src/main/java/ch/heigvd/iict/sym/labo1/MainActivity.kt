@@ -1,10 +1,13 @@
 package ch.heigvd.iict.sym.labo1
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -75,7 +78,20 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            //TODO à compléter...
+            // Check if email is valid
+            if (!emailInput!!.contains("@")) {
+                Toast.makeText(applicationContext, "Invalid email", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Check if email/password peer is valid
+            if (!credentials.contains(Pair(emailInput, passwordInput))) {
+                AlertDialog.Builder(this).setMessage("Password incorrect").create().show()
+                return@setOnClickListener
+            } else {
+                Toast.makeText(applicationContext, "Successful login", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 
