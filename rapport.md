@@ -18,3 +18,21 @@ Ici on doit copier le `layout` `activity_main` dans un nouveau `layout` qu'on d�
 
 ![image-20201001104948078](/Users/robin/Document/heig/3eme/SYM/SYM_Labo1/image/image-20201001104948078.png)
 
+## 3. Gestion des événement set mise à jour de l’interface utilisateur
+
+### 3.1.Vérification du format de l’e-mail
+
+> Lors de l’appui sur le bouton «Validate»,  dans  le  cas  où  les  deux champs  ontété  complétés,nous souhaitons dans un premier tempsvérifier que l’e-mail saisi soit valide (nous nous limiterons dans le cadre de ce laboratoire à vérifier la présence du caractère@), dans le cas contraire vous afficherezun message d’erreur à l’utilisateur sous la forme d’un Toast
+
+### 3.2. Vérification du couple e-mail / mot de passe
+
+> Si le format de l’e-mail saisi est valide, nous vérifierons ensuite si le couple (e-mail et mot de passe) saisi appartient à un utilisateur valide. Pour cela nous mettons à votre disposition, dans le code, la liste credentialscontenant  des  couples  valides.Si  le  couplesaisin’est pas valide, nous afficherons à l’utilisateur un message d’erreur sous la forme d’une fenêtre de dialogue2, si le couple est valide nous ouvrirons une nouvelle activité (dans la manipulation suivante).
+
+## 4. Passage à une autre activité
+
+### 4.1. Création et lancement de la nouvelle activité
+
+> La première manipulation va être de définir cette nouvelle activité dans Android Studio. Une activité est principalement composée de deux éléments:son code (une classe héritant d’Activityou d’une de ses sous-classes, comme par exemple AppCompatActivity) et d’un fichier XMLdéfinissant son layout, l’activité devra être ensuite déclarée dans le fichier Manifestde l’application, sous peine de ne pas pouvoir être lancée. Android Studiopermet d’automatiser la création d’une nouvelle activité, toutefois selon le type choisi,le layout automatiquement généré sera très complexe.Une fois l’activité ajoutée dans l’IDE, vous mettrez en place le code permettant de la lancer lors du succès du login.
+
+
+
