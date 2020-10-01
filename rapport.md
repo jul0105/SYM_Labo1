@@ -10,3 +10,11 @@
 
 Il suffit de changer `inputType` a `textPassword` pour le champs textuel (`main_email`) mot de passe. Et a `textEmailAdress` le `inputType` de `main_password`.
 
+### 2.3 Mode paysage
+
+> Si vous basculez votre téléphone en mode paysage, l’UI ne sera pas totalement adaptée et certains éléments,  comme  le  logo,  ne  seront  pas  affichés  correctement  (voir  Fig.  2a).  Votre  tâche  est  ici  de spécialiserle layout de cette première activité pour assurer un affichage adapté en mode paysage (voir un exemple sur la Fig.2b).
+
+Ici on doit copier le `layout` `activity_main` dans un nouveau `layout` qu'on définit être comme paysage puis réarranger les éléments. 
+
+![image-20201001104948078](/Users/robin/Document/heig/3eme/SYM/SYM_Labo1/image/image-20201001104948078.png)
+
