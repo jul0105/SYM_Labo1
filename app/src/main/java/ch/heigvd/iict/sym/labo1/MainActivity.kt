@@ -58,9 +58,16 @@ class MainActivity : AppCompatActivity() {
             password.error = null
         }
 
+        val REGISTER_ACTIVITY = 1
         newAccount.setOnClickListener {
             val intent = Intent(this,RegisterActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent,REGISTER_ACTIVITY)
+
+        }
+        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
+            if(requestCode == REGISTER_ACTIVITY)
+                // TODO add les trucs et verif que le resulat est ok
+                
         }
 
         validateButton.setOnClickListener {
@@ -111,6 +118,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
     // En Kotlin, les variables static ne sont pas tout à fait comme en Java
     // pour des raison de lisibilité du code, les variables et méthodes static
