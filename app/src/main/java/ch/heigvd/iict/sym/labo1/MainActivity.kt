@@ -1,13 +1,13 @@
 package ch.heigvd.iict.sym.labo1
 
 import android.app.AlertDialog
-import android.content.DialogInterface
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -90,6 +90,11 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             } else {
                 Toast.makeText(applicationContext, "Successful login", Toast.LENGTH_SHORT).show()
+
+                // Start ContentActivity
+                val intent = Intent(this@MainActivity, ContentActivity::class.java)
+                intent.putExtra("email", emailInput)
+                startActivity(intent)
             }
 
         }
