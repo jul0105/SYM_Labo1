@@ -145,7 +145,7 @@ Lors de l'importation d'image matricielle, plusieurs tailles sont générés pou
 
 Les images vectorielles s'adapte automatiquement à la taille de l'écran. Il n'est donc pas nécessaire d'avoir plusieurs copie de l'image en taille différentes.
 
-Néanmoins, ces images sont uniquement adapté au 
+Néanmoins, ces images sont uniquement adapté au logos et graphisme mais pas au photos de par leur construction.
 
 ### 5.3 Factorisation du code
 
