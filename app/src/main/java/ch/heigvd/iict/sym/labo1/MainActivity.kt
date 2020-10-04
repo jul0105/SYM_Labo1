@@ -1,13 +1,9 @@
 package ch.heigvd.iict.sym.labo1
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
@@ -79,7 +75,6 @@ class MainActivity : Auth() {
                 val email: String = data.getStringExtra("email").toString()
                 val password: String = data.getStringExtra("password").toString()
 
-//                credentials.toMutableList().add(Pair(email, password) as Pair<String, String>)
                 credentials = credentials + Pair(email, password)
             }
         }
