@@ -54,7 +54,7 @@ abstract class Auth : AppCompatActivity() {
 
             // Check if email is valid
             if (!emailInput!!.contains("@")) {
-                Toast.makeText(applicationContext, "Invalid email", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.invalid_email), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
