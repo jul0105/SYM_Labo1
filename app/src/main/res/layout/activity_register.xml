@@ -4,21 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="@dimen/app_horizontal_margin"
-    android:layout_marginEnd="@dimen/app_horizontal_margin"
-    android:layout_marginTop="@dimen/app_vertical_margin"
-    android:layout_marginBottom="@dimen/app_vertical_margin"
-    tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/main_logo"
-        android:layout_width="63dp"
-        android:layout_height="89dp"
-        android:tint="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/thumb_up" />
+    tools:context=".RegisterActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -68,30 +54,23 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/main_cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/main_cancel_btn" />
-
-            <Button
                 android:id="@+id/main_validate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/app_horizontal_separation"
-                android:text="@string/main_validate_btn" />
+                android:text="@string/main_create_account" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/main_new_account"
+    <ImageView
+        android:id="@+id/main_logo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/main_create_account"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:tint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>
