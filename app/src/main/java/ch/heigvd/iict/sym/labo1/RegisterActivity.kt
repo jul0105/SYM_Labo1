@@ -5,6 +5,8 @@ import android.content.Intent
 import android.widget.Toast
 
 class RegisterActivity : Auth() {
+
+    // Validation du l'inscription
     override fun validate(emailInput: String, passwordInput: String) {
         Toast.makeText(applicationContext, "Successful registration", Toast.LENGTH_SHORT).show()
         val returnIntent: Intent = Intent()
@@ -19,10 +21,12 @@ class RegisterActivity : Auth() {
         private const val LAYOUT = R.layout.activity_register
     }
 
+    // Récupère le tag companion
     override fun getTag(): String {
         return TAG
     }
 
+    // Récupère le layout du companion
     override fun getLayout(): Int {
         return LAYOUT
     }

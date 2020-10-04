@@ -52,11 +52,14 @@ class MainActivity : Auth() {
         }
     }
 
+    // Validation du login
     override fun validate(emailInput: String, passwordInput: String) {
+        // Vérifie si la pair e-mail/mot de passe est valide
         if (!credentials.contains(Pair(emailInput, passwordInput))) {
             AlertDialog.Builder(this).setMessage("Password incorrect").create().show()
             return
         } else {
+            // Bascule vers l'activité "Content"
             Toast.makeText(applicationContext, "Successful login", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, content::class.java).apply {
                 putExtra("email", emailInput)
@@ -69,6 +72,7 @@ class MainActivity : Auth() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
         super.onActivityResult(requestCode, resultCode, data)
 
+        // Création d'un nouveau utilisateur depuis l'activité "Register"
         if(requestCode == REGISTER_ACTIVITY) {
             if (resultCode == RESULT_OK && data != null) {
 
@@ -93,10 +97,12 @@ class MainActivity : Auth() {
         private const val LAYOUT = R.layout.activity_main
     }
 
+    // Récupère le tag companion
     override fun getTag(): String {
         return TAG
     }
 
+    // Récupère le layout du companion
     override fun getLayout(): Int {
         return LAYOUT
     }
