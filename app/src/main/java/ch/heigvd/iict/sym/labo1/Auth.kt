@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-abstract class Auth : AppCompatActivity() {
+abstract class Auth : LogActivity() {
     protected lateinit var email: EditText
     protected lateinit var password: EditText
     protected lateinit var validateButton: Button
@@ -64,6 +64,5 @@ abstract class Auth : AppCompatActivity() {
     }
 
     abstract fun validate(emailInput: String, passwordInput: String)
-    abstract fun getTag(): String
     abstract fun getLayout(): Int
 }
