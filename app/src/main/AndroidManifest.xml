@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/SymTheme">
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".content" />
+        <activity android:name=".ContentActivity" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden|adjustResize">

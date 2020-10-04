@@ -17,10 +17,6 @@ abstract class Auth : LogActivity() {
         // on définit le layout à utiliser pour l'affichage
         setContentView(getLayout())
 
-        // l'appel à la méthode onCreate de la super classe est obligatoire
-        Log.d(getTag(), "Début du cycle de vie de MainActivity")
-
-
         // on va maintenant lier le code avec les éléments graphiques (champs texts, boutons, etc.)
         // présents dans le layout (nous allons utiliser l'id défini dans le layout, le cast est
         // réalisé automatiquement)

@@ -1,12 +1,11 @@
 package ch.heigvd.iict.sym.labo1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import ch.heigvd.iict.sym.labo1.network.ImageDownloader
 
-class content : AppCompatActivity() {
+class ContentActivity : LogActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content)
@@ -23,7 +22,10 @@ class content : AppCompatActivity() {
             ImageDownloader(this, "https://thispersondoesnotexist.com/image").show()
         }
 
+    }
 
-
+    // Récupère le tag companion
+    override fun getTag(): String {
+        return "ContentActivity"
     }
 }
