@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var cancelButton: Button
     private lateinit var validateButton: Button
     private lateinit var newAccount: TextView
-    val REGISTER_ACTIVITY = 1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // l'appel à la méthode onCreate de la super classe est obligatoire
@@ -121,7 +121,10 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         Log.d(TAG,"aaaa ca fonctionne ! ");
         if(requestCode == REGISTER_ACTIVITY) {
-            if (resultCode == RESULT_OK) {
+            if (resultCode == RESULT_OK && data != null) {
+                
+                val email = data?.getSerializableExtra("email")
+                val password = data?.getSerializableExtra("password")
 
             }
         }
@@ -136,6 +139,7 @@ class MainActivity : AppCompatActivity() {
     // avec les autres éléments non-static de la classe
     companion object {
         private const val TAG: String = "MainActivity"
+        private const val REGISTER_ACTIVITY = 1
     }
 
 }
