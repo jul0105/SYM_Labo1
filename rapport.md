@@ -1,10 +1,10 @@
 # SYM Labo 1
 
 > Auteurs : Julien Béguin, Robin Cuénoud & Gaëtan Daubresse
->
 > Date : 04.10.2020 
+> Classe : B
 
-## Introduction 
+## 1. Introduction
 
 L'objectif de ce laboratoire est d'effectuer des manipulation sur une application basique sur un smartphone Android. Cela nous permettra également de nous familiariser avec l'environnement de développement Android Studio. Nous avons choisit de le faire en Kotlin car ce langage deviendra sûrement le seul langage supporté sur Android.  
 
@@ -184,3 +184,6 @@ Les activités dans le système sont gérées de la même manière qu'une stack.
 
 [source]: https://developer.android.com/reference/android/app/Activity
 
+## 6. Conclusion
+
+Ce laboratoire nous a permis de prendre en main l’environnement de développement Android. Nous avons appris la structure basiques des Activity et comment passer des données entre des Activity.
