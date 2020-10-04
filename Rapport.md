@@ -34,3 +34,63 @@ if (!credentials.contains(Pair(emailInput, passwordInput))) {
 }
 ```
 
+
+
+## 4. Passage à une autre activité
+
+### 4.2. Passage de paramètres à la nouvelle activité
+
+Dans MainActivity.kt :
+
+```kotlin
+// Start ContentActivity
+val intent = Intent(this@MainActivity, ContentActivity::class.java)
+intent.putExtra("email", emailInput)
+startActivity(intent)
+```
+
+Puis dans ContentActivity.kt :
+
+```kotlin
+val email = intent.getStringExtra("email")
+val textView = findViewById<TextView>(R.id.textView).apply {
+    text = email
+}
+```
+
+
+
+### 4.3. Permissions simples
+
+Ajouter la ligne suivante dans AndroidManifest.xml :
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+Dans ContentActivity.kt : 
+
+```kotlin
+ImageDownloader(findViewById<ImageView>(R.id.avatarView), "https://thispersondoesnotexist.com/image").show()
+
+```
+
+
+
+## 5. Navigation entre les activités
+
+### 5.2. Affichage d’une image
+
+> *Dans quel(s) dossier(s) devons-nous ajouter cette image ?*
+
+Dans le dossier `res/drawable`
+
+> *Veuillez décrire brièvement la logique derrière la gestion des ressources de type « image matricielle » sur Android.*
+
+Lors de l'importation d'image matricielle, plusieurs tailles sont générés pour que l'application puisse afficher l'image au format idéal par rapport à la taille de l'écran.
+
+> *Quel intérêt voyez-vous donc à utiliser une image vectorielle ? Est-ce possible dans tous les cas ?*
+
+Les images vectorielles s'adapte automatiquement à la taille de l'écran. Il n'est donc pas nécessaire d'avoir plusieurs copie de l'image en taille différentes.
+
+Néanmoins, ces images sont uniquement adapté au 
