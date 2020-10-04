@@ -119,10 +119,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
         super.onActivityResult(requestCode, resultCode, data)
-        Log.d(TAG,"aaaa ca fonctionne ! ");
+
         if(requestCode == REGISTER_ACTIVITY) {
             if (resultCode == RESULT_OK && data != null) {
-                
+
                 val email = data?.getSerializableExtra("email")
                 val password = data?.getSerializableExtra("password")
 

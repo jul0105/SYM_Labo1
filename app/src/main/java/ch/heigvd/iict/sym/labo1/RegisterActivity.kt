@@ -59,7 +59,7 @@ class RegisterActivity : AppCompatActivity() {
             val returnIntent:Intent = Intent()
             returnIntent.putExtra("email",emailInput)
             returnIntent.putExtra("password",passwordInput)
-            setResult(Activity.RESULT_OK)
+            setResult(Activity.RESULT_OK,returnIntent)
             finish()
         }
 
