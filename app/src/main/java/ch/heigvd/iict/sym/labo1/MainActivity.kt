@@ -59,17 +59,10 @@ class MainActivity : AppCompatActivity() {
             password.error = null
         }
 
-        val REGISTER_ACTIVITY = 1
         newAccount.setOnClickListener {
             val intent = Intent(this,RegisterActivity::class.java)
             startActivityForResult(intent,REGISTER_ACTIVITY)
-
         }
-//        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
-//            if(requestCode == REGISTER_ACTIVITY)
-//                // TODO add les trucs et verif que le resulat est ok
-//
-//        }
 
         validateButton.setOnClickListener {
             //on réinitialise les messages d'erreur
@@ -95,8 +88,6 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
-
             // Check if email is valid
             if (!emailInput!!.contains("@")) {
                 Toast.makeText(applicationContext, "Invalid email", Toast.LENGTH_SHORT).show()
@@ -120,6 +111,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == REGISTER_ACTIVITY) {
+            if (resultCode == RESULT_OK && data != null) {
+
+                val email = data?.getSerializableExtra("email")
+                val password = data?.getSerializableExtra("password")
+
+            }
+        }
+    }
 
 
     // En Kotlin, les variables static ne sont pas tout à fait comme en Java
@@ -130,6 +133,7 @@ class MainActivity : AppCompatActivity() {
     // avec les autres éléments non-static de la classe
     companion object {
         private const val TAG: String = "MainActivity"
+        private const val REGISTER_ACTIVITY = 1
     }
 
 }

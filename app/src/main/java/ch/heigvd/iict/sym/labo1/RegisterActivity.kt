@@ -1,5 +1,6 @@
 package ch.heigvd.iict.sym.labo1
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -51,11 +52,15 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             Toast.makeText(applicationContext, "Successful registration", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this,MainActivity::class.java).apply {
+            /*val intent = Intent(this,MainActivity::class.java).apply {
                 putExtra("email",emailInput)
                 putExtra("password",passwordInput)
-            }
-            startActivity(intent)
+            }*/
+            val returnIntent:Intent = Intent()
+            returnIntent.putExtra("email",emailInput)
+            returnIntent.putExtra("password",passwordInput)
+            setResult(Activity.RESULT_OK,returnIntent)
+            finish()
         }
 
     }
