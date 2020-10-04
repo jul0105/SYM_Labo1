@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-abstract class Auth : AppCompatActivity() {
+abstract class Auth : LogActivity() {
     protected lateinit var email: EditText
     protected lateinit var password: EditText
     protected lateinit var validateButton: Button
@@ -16,10 +16,6 @@ abstract class Auth : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         // on définit le layout à utiliser pour l'affichage
         setContentView(getLayout())
-
-        // l'appel à la méthode onCreate de la super classe est obligatoire
-        Log.d(getTag(), "Début du cycle de vie de MainActivity")
-
 
         // on va maintenant lier le code avec les éléments graphiques (champs texts, boutons, etc.)
         // présents dans le layout (nous allons utiliser l'id défini dans le layout, le cast est
@@ -64,6 +60,5 @@ abstract class Auth : AppCompatActivity() {
     }
 
     abstract fun validate(emailInput: String, passwordInput: String)
-    abstract fun getTag(): String
     abstract fun getLayout(): Int
 }

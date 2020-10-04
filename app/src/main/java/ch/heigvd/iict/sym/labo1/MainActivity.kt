@@ -61,7 +61,7 @@ class MainActivity : Auth() {
         } else {
             // Bascule vers l'activité "Content"
             Toast.makeText(applicationContext, getString(R.string.login_sucess), Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, content::class.java).apply {
+            val intent = Intent(this, ContentActivity::class.java).apply {
                 putExtra("email", emailInput)
             }
             startActivity(intent)
