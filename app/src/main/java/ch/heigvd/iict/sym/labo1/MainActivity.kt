@@ -1,10 +1,15 @@
 package ch.heigvd.iict.sym.labo1
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var password: EditText
     private lateinit var cancelButton: Button
     private lateinit var validateButton: Button
+    private lateinit var newAccount: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // l'appel à la méthode onCreate de la super classe est obligatoire
@@ -36,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         password = findViewById(R.id.main_password)
         cancelButton = findViewById(R.id.main_cancel)
         validateButton = findViewById(R.id.main_validate)
+        newAccount = findViewById(R.id.main_new_account)
         // Kotlin, au travers des Android Kotlin Extensions permet d'automatiser encore plus cette
         // étape en créant automatiquement les variables pour tous les éléments graphiques présents
         // dans le layout et disposant d'un id
@@ -49,6 +56,18 @@ class MainActivity : AppCompatActivity() {
             // on annule les éventuels messages d'erreur présents sur les champs de saisie
             email.error = null
             password.error = null
+        }
+
+        val REGISTER_ACTIVITY = 1
+        newAccount.setOnClickListener {
+            val intent = Intent(this,RegisterActivity::class.java)
+            startActivityForResult(intent,REGISTER_ACTIVITY)
+
+        }
+        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
+            if(requestCode == REGISTER_ACTIVITY)
+                // TODO add les trucs et verif que le resulat est ok
+                
         }
 
         validateButton.setOnClickListener {
@@ -75,9 +94,32 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            //TODO à compléter...
+
+
+            // Check if email is valid
+            if (!emailInput!!.contains("@")) {
+                Toast.makeText(applicationContext, "Invalid email", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Check if email/password peer is valid
+            if (!credentials.contains(Pair(emailInput, passwordInput))) {
+                AlertDialog.Builder(this).setMessage("Password incorrect").create().show()
+                return@setOnClickListener
+            } else {
+                Toast.makeText(applicationContext, "Successful login", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,content::class.java).apply {
+                    putExtra("email",emailInput)
+                }
+                startActivity(intent)
+
+            }
+
         }
+
     }
+
+
 
     // En Kotlin, les variables static ne sont pas tout à fait comme en Java
     // pour des raison de lisibilité du code, les variables et méthodes static
