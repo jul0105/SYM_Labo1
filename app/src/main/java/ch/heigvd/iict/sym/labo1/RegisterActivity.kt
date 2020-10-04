@@ -6,7 +6,7 @@ import android.widget.Toast
 
 class RegisterActivity : Auth() {
     override fun validate(emailInput: String, passwordInput: String) {
-        Toast.makeText(applicationContext, "Successful registration", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, getString(R.string.registr_sucess), Toast.LENGTH_SHORT).show()
         val returnIntent: Intent = Intent()
         returnIntent.putExtra("email", emailInput)
         returnIntent.putExtra("password", passwordInput)

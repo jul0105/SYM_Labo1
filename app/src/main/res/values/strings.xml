@@ -7,7 +7,10 @@
     <string name="main_validate_btn">Validate</string>
     <string name="main_cancel_btn">Cancel</string>
     <string name="main_create_account">New account</string>
-
+    <string name="registr_sucess">Successful registration</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="login_sucess">Successful login</string>
+    <string name="pass_wrong">Password incorrect</string>
 
 
 </resources>

@@ -54,10 +54,10 @@ class MainActivity : Auth() {
 
     override fun validate(emailInput: String, passwordInput: String) {
         if (!credentials.contains(Pair(emailInput, passwordInput))) {
-            AlertDialog.Builder(this).setMessage("Password incorrect").create().show()
+            AlertDialog.Builder(this).setMessage(getString(R.string.pass_wrong)).create().show()
             return
         } else {
-            Toast.makeText(applicationContext, "Successful login", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, getString(R.string.login_sucess), Toast.LENGTH_SHORT).show()
             val intent = Intent(this, content::class.java).apply {
                 putExtra("email", emailInput)
             }
