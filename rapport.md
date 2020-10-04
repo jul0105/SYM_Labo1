@@ -16,7 +16,7 @@ Il suffit de changer `inputType` a `textPassword` pour le champs textuel (`main_
 
 Ici on doit copier le `layout` `activity_main` dans un nouveau `layout` qu'on définit être comme paysage puis réarranger les éléments. 
 
-![image-20201001104948078](/Users/robin/Document/heig/3eme/SYM/SYM_Labo1/image/image-20201001104948078.png)
+![image-20201001104948078](image/image-20201001104948078.png)
 
 ## 3. Gestion des événement set mise à jour de l’interface utilisateur
 
