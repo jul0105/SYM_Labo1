@@ -184,3 +184,6 @@ Les activités dans le système sont gérées de la même manière qu'une stack.
 
 [source]: https://developer.android.com/reference/android/app/Activity
 
+## Conclusion 
+
+Nous avons apprécié ce laboratoire car cela nous a permis de découvrir un environnement de développement que nous ne connaissions pas. Nous avons du prendre le temps de lire la documentation Android afin de comprendre les différents mécanismes liés aux Activité Android. 
