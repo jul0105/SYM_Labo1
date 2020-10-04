@@ -126,7 +126,11 @@ ImageDownloader(findViewById<ImageView>(R.id.avatarView), "https://thispersondoe
 > *Comme pour le point 4.1, vous allez commencer par définir une nouvelle activité et un layout associé. Cette activité, et son layout, sont très semblables à l’activité principale il est donc certainement possible de s’en inspirer ou même de réutiliser certains éléments. Cette activité permettra de saisir une adresse e-mail et un mot de passe, elle effectuera une validation de ceux-ci (sur la forme uniquement, comme pour le point 3.1, nous n’allons pas faire de vérifications additionnelles), et retournera le compte (couple e-mail / password) à l’activité principale qui l’ajoutera alors à la liste*
 > *credentials . (Indice : Launching an activity for result).*
 
-TODO
+Pour implémenter cela on va ajouter dans `companion object` `private const val REGISTER_ACTIVITY = 1` qui sera la valeur de retour de l'activité register. Cela permet à l'activité `main` de savoir quelle activité a fini et lui retourne quelque chose. 
+
+Dans `RegisterActivity` un intent est utilisé comme au préalable et la fonction `setResult` est appelée pour indiquer le retour de l'activité. Ici `RESULT_OK` est utilisé si le compte à correctement été crée. 
+
+Dans `MainActivity` le résultat va être récupéré. Pour cela la fonction `onActivityResult` est override et va ajouter a `credentials` le couple `email/password` si tout c'est bien déroulé. L'activité `RegisterActivity` est lancée cette fois avec la fonction `startActivityForResult(intent,REGISTER_ACTIVITY)` qui se chargera d'appeler l'override de `onActivityResult`. Ici un `intent` qui ne contient comme donnée lui est passée et le code d'activité. 
 
 ### 5.2 Affichage d'une image 
 
