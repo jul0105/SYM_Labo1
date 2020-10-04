@@ -4,6 +4,10 @@
 >
 > Date : 04.10.2020 
 
+## Introduction 
+
+L'objectif de ce laboratoire est d'effectuer des manipulation sur une application basique sur un smartphone Android. Cela nous permettra également de nous familiariser avec l'environnement de développement Android Studio. Nous avons choisit de le faire en Kotlin car ce langage deviendra sûrement le seul langage supporté sur Android.  
+
 ## 2. Premières constatations
 
 ### 2.1 Langue de l’interface
