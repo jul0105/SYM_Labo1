@@ -151,7 +151,9 @@ Néanmoins, ces images sont uniquement adapté au logos et graphisme mais pas au
 
 > *Vous remarquerez les très nombreuses similarités entre ces deux activités : le code de vérification et certains éléments de l’interface graphique. Nous souhaitons factoriser ce code pour en faciliter sa maintenance. Veuillez mettre en place une factorisation « simple » du code de ces deux activités (en Kotlin ou Java), vous commenterez votre approche dans votre rapport. Vous discuterez également des possibilités de factoriser des layouts, sans forcément le réaliser.*
 
-TODO
+Les classes `MainActivity.kt` et `RegisterActivity.kt` ont beaucoup de code en commun. Nous avons donc créé une classe `Auth.kt` qui est hérité par les deux classes et qui contient le code en commun.
+
+Pour ce qui est des layouts, nous pourrions factoriser les groupes d'éléments de l'affichage. Par exemple le formulaire de connexion et le formulaire d'inscription sont similaires. Nous pourrions créer un "fragement" formulaire qui serait appelé dans les deux layouts.
 
 ### 5.4 Cycle de vie
 
