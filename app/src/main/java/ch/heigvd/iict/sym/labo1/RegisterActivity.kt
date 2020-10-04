@@ -56,6 +56,7 @@ class RegisterActivity : AppCompatActivity() {
                 putExtra("password",passwordInput)
             }
             startActivity(intent)
+            
         }
 
     }
