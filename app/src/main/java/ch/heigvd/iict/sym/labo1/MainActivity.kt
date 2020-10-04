@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // l'appel à la méthode onCreate de la super classe est obligatoire
+        Log.d(TAG, "Début du cycle de vie de MainActivity")
         super.onCreate(savedInstanceState)
         // on définit le layout à utiliser pour l'affichage
         setContentView(R.layout.activity_main)
@@ -64,11 +65,11 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent,REGISTER_ACTIVITY)
 
         }
-        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
-            if(requestCode == REGISTER_ACTIVITY)
-                // TODO add les trucs et verif que le resulat est ok
-                
-        }
+//        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent? ) {
+//            if(requestCode == REGISTER_ACTIVITY)
+//                // TODO add les trucs et verif que le resulat est ok
+//
+//        }
 
         validateButton.setOnClickListener {
             //on réinitialise les messages d'erreur
